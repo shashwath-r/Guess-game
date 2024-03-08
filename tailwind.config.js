@@ -6,11 +6,22 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "300px",
+      sm: "450px",
+      md: "750px",
+      lg: "1000px",
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      boxShadow: {
+        "3xl": "0 10px 20px -5px rgba(1, 1, 1, 1)",
+      },
+    },
+    container: {
+      padding: {
+        md: "2rem",
+        sm: "1rem",
+        xs: "0.7rem",
       },
     },
   },
