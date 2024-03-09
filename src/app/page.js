@@ -15,6 +15,7 @@ const HomePage = () => {
   const handleClick = (data) => {
     setName(data);
     setIsDataFetched(false);
+    setErrorData("");
   };
 
   const handleSubmit = (e) => {
@@ -52,7 +53,7 @@ const HomePage = () => {
       })
       .catch((e) => {
         console.error("Error while fetching userData:", e);
-        setErrorData(e.stack);
+        setErrorData(e.message);
       });
   };
 
@@ -114,7 +115,7 @@ const HomePage = () => {
               <li>Country: {country}</li>
             </ul>
           </div>
-        ) : errorData ? (
+        ) : !isDataFetched && errorData ? (
           <div className="flex flex-col gap-5 md:w-2/4 w-full m-auto border rounded border-gray-400 py-1 px-2 shadow-3xl text-red-500">
             {errorData}
           </div>
